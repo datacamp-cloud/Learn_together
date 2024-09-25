@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ShowInformation("JAMES", "first", "second")
+                    ShowInformation("JetPack Compose Tutorial", "first", "second")
                 }
             }
         }
