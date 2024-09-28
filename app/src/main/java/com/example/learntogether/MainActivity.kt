@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,7 +14,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -35,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ShowInformation("JetPack Compose Tutorial", "first", "second")
+                    ImagePreview(title= Resourses.TITLE, firstPara = Resourses.FIRST_PARA, secondPara = Resourses.SECOND_PARA )
                 }
             }
         }
@@ -46,10 +44,7 @@ class MainActivity : ComponentActivity() {
 fun ImagePreview(modifier: Modifier = Modifier, title: String, firstPara: String, secondPara: String){
     val image = painterResource(R.drawable.bg_compose_background)
 
-    Column (
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
+    Column{
         Image(
             painter = image,
             contentDescription = null,
@@ -77,7 +72,7 @@ fun ShowInformation(title: String, firstPara: String, secondPara: String, modifi
         //premier paragraphe
         Text(
             text = firstPara,
-            fontSize = 18.sp,
+            fontSize = 14.sp,
             textAlign = TextAlign.Justify,
             modifier = modifier.padding(
                 start = 16.dp,
@@ -88,7 +83,7 @@ fun ShowInformation(title: String, firstPara: String, secondPara: String, modifi
         //deuxieme paragraphe
         Text(
             text = secondPara,
-            fontSize = 18.sp,
+            fontSize = 14.sp,
             textAlign = TextAlign.Justify,
             modifier = modifier.padding(16.dp)
         )
